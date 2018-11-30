@@ -59,6 +59,7 @@ Oscar    | 8        | 0	     |Cyan
 
 And this is our **Friends** table:
 
+
 Name  | Friend
 ----- | ------
 John  | Timmy
@@ -67,6 +68,7 @@ Timmy | John
 Patty | Oscar
 
 Then our query will return:
+
 
 StudentName  | Grade      | HasPet     | FavoriteColor | StudentName | Friend
 -----------  |---------- | ---------- | ------------- | ----------- | ----------
@@ -145,6 +147,7 @@ this is the **Student** table.
 
 Output:
 
+
 Name  | Friend
 ----- | -----
 John  | Timmy
@@ -164,6 +167,7 @@ this is the **Friends** table.
 
 To illustrate this idea, we’ll revise the **Friends** table to the following:
 
+
 Name  | Friend | Friend_grade
 ----- | ----- | -----
 John  | Timmy | 7
@@ -174,12 +178,14 @@ Emile | John  | 7
 
 **Student** doesn’t contain an entry for the name Emile so the following query:
 
+
     SELECT Student.name, HasPet
     FROM Student
     RIGHT JOIN Friends
     ON Student.Name = Friends.Name
 
 Would output:
+
 
 Name  | HasPet
 ----- | -----
@@ -215,7 +221,9 @@ We’ll use a Full Outer Join:
     FULL OUTER JOIN Friends
     ON Student.Name = Friends.Name
 
+
 Output:
+
 
 Name   | Friend | HasPet
 ----- | ----- | -----
@@ -248,10 +256,12 @@ based on students who share a favorite color:
 
 Will output:
 
+
 Student  | Possible_friend      | Shared_FavoriteColor
 -------- | -------- | --------
 John     | Patty     | Red
 Patty    | John       | Red
+
 
 In the query, there are two instances of the table **Student** and they are compared
 against each other to find rows that have different names and the same favorite color.
@@ -281,7 +291,9 @@ Here’s a basic example using the `AS` keyword:
     INNER JOIN Friend
     ON Student.StudentName = Friend.StudentName
 
+
 Results in:
+
 
 friend_one  | friend_two
 -------- | -------- | --------
@@ -305,6 +317,7 @@ While all of our examples so far have joined tables on a single condition, we ar
 
 This will output:
 
+
 StudentName  |StudentName  |FavoriteColor  |FavoriteColor
 ----------- | ----------- | -------------  |-------------
 John       |  Timmy  |      Red       |     Orange       
@@ -314,6 +327,7 @@ Timmy    |    John    |     Orange  |       Red
 Patty       | John       |  Red          |  Red          
 Patty       | Oscar     |   Red         |  Cyan   
 
+
 We can use any type of valid conditional statement to filter our query and get the exact data we are looking for.  This makes Join statements incredibly powerful for querying databases.
 
 ## Joining Multiple Tables
@@ -321,6 +335,7 @@ We can use any type of valid conditional statement to filter our query and get t
 Sometimes it can be useful to join more than two tables. Imagine we have a database that represents multiple classrooms of students at a school. Each classroom has its own table in the database and we want to return all the students with a pet in the school. We can accomplish this by joining all the tables and selecting where *HasPet = 1*.
 
 Here are three tables that each represent a classroom:
+
 
 **Class #1**
 
@@ -346,9 +361,12 @@ ID    | Name   | HasPet
 8        | Katie  | 1
 9        | Ben    | 1
 
+
 We want to join the tables on their ID’s as there are two students that share the name *Ben*.
 
+
 Here is our query:
+
 
     SELECT Class1.*, Class2.*, Class3.*
     FROM Class1
@@ -359,6 +377,8 @@ Here is our query:
     WHERE HasPet = 1
 
 It will output:
+
+
 
 ID    | Name   | HasPet
 -------- | -------- | ------ 
