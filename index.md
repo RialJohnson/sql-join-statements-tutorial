@@ -132,7 +132,7 @@ from different tables.  This Venn Diagram should provide a simplified by intuiti
 
 ![](https://i.imgur.com/BoTSx1n.png)
 
-#### Left Join
+### Left Join
 
 Left (Outer) Join combines the matching values like an Inner Join, but also includes unmatched
 values from the left table. The left table is the first table specified in SQL. In the below example,
@@ -157,7 +157,7 @@ Notice that if we used an Inner Join the query would have omitted the last row b
 table doesn't have an entry for Ricky. Using a Left Join, all the elements in **Student**
 are returned.
 
-#### Right Join
+### Right Join
 
 Right (Outer) Join behaves just like a Left Join, but includes values from the right table instead of the left. The right table is the first table specified in SQL.  In the below example,
 this is the **Friends** table.
@@ -193,7 +193,7 @@ In an Inner Join, Emile wouldn’t have been returned at all but with a Right Jo
 of the **Friends** table are returned resulting in Emile having a null value for the HasPet
 column because Emile cannot be found in the  **Student** table.
 
-#### Full Outer Join
+### Full Outer Join
 
 Full Outer Join behave like a combined Left Join and Right Join. Unmatched values
 from the left and right tables are included in the resulting output. Left Joins and Right Joins are subtypes of Full Outer Joins.
