@@ -109,6 +109,7 @@ To clarify terminology in the next section, remember that Inner Joins only inclu
 rows that have values matched in the `ON` clause, and that all other rows are discarded from the table.
 
 ### Outer Joins
+
 Outer Joins combine tables without trimming the table as much as an Inner Join. Outer Joins include rows from other tables that do not necessarily match with at least one row in the other tables. To gain a better understanding, consider the output of the below queries. The first uses an Inner Join, and the second uses a specific type of Outer Join called Left Join.
 
     SELECT Student.name, grade
@@ -132,6 +133,7 @@ from different tables.  This Venn Diagram should provide a simplified by intuiti
 ![](https://i.imgur.com/BoTSx1n.png)
 
 #### Left Join
+
 Left (Outer) Join combines the matching values like an Inner Join, but also includes unmatched
 values from the left table. The left table is the first table specified in SQL. In the below example,
 this is the **Student** table.
@@ -156,9 +158,9 @@ table doesn't have an entry for Ricky. Using a Left Join, all the elements in **
 are returned.
 
 #### Right Join
+
 Right (Outer) Join behaves just like a Left Join, but includes values from the right table instead of the left. The right table is the first table specified in SQL.  In the below example,
 this is the **Friends** table.
-
 
 To illustrate this idea, we’ll revise the **Friends** table to the following:
 
@@ -192,6 +194,7 @@ of the **Friends** table are returned resulting in Emile having a null value for
 column because Emile cannot be found in the  **Student** table.
 
 #### Full Outer Join
+
 Full Outer Join behave like a combined Left Join and Right Join. Unmatched values
 from the left and right tables are included in the resulting output. Left Joins and Right Joins are subtypes of Full Outer Joins.
 
@@ -227,6 +230,7 @@ Ricky contains a null value because he doesn’t exist in the **Friends** table 
 table and therefore doesn't have HasPet information.
 
 ### Self Join
+
 As the name might indicate, a Self Join joins a table with itself.
 As indicated by the title, a self join is a join in which a table is joined with itself.
 Different tables aren't being joined, no `JOIN` keyword is actually required.
@@ -264,7 +268,8 @@ Then make small changes to refine your query and build up to a powerful query. T
 
 Here’s a few more things you can do with SQL Join statements:
 
-### Renaming Columns
+## Renaming Columns
+
 The `AS` keyword is used to change the column name in the output of a query. The format
 is simply: `<column-name> AS <desired-name>`. Changing column names is a useful way to keep output organized and clear without modifying the resulting data. It’s especially valuable when developing complex queries.
 
@@ -287,7 +292,7 @@ Patty   | Oscar
 
 While changing column names is not typically necessary, it’s a powerful tool used to organize and format output.
 
-### Multiple Condition Join Statements
+## Multiple Condition Join Statements
 
 While all of our examples so far have joined tables on a single condition, we are not limited to a single condition to filter our join statements. The following query demonstrates a case where time and code can be saved by joining on multiple conditions in a single SQL statement. In our example, we want to retrieve everyone that is a friend of a student, or is in the same grade as them. 
 
@@ -311,7 +316,8 @@ Patty       | Oscar     |   Red         |  Cyan
 
 We can use any type of valid conditional statement to filter our query and get the exact data we are looking for.  This makes Join statements incredibly powerful for querying databases.
 
-### Joining Multiple Tables
+## Joining Multiple Tables
+
 Sometimes it can be useful to join more than two tables. Imagine we have a database that represents multiple classrooms of students at a school. Each classroom has its own table in the database and we want to return all the students with a pet in the school. We can accomplish this by joining all the tables and selecting where *HasPet = 1*.
 
 Here are three tables that each represent a classroom:
@@ -366,6 +372,7 @@ ID    | Name   | HasPet
 Each additional table to be added to the query needs its own individual Join statement. By following this syntax we can join any number of tables, but keep in mind that this can get complex quickly.
 
 ## Underlying Mechanics
+
 We’ve seen a lot of examples and use cases for Join statements, but how do they work? Conceptually, join statements are two different operations on the data: a cross
 product of the tables to be joined followed by a `SELECT ... WHERE` operation. The cross product can be seen by running a join without specifying the `ON [conditions]` portion
 of the query:
@@ -410,11 +417,12 @@ captured with simple queries, but the behavior is the same: generate a table
 based of the type of join and then filter the table with the conditions
 specified in the `ON` clause.
 
-### Final Thoughts
+## Final Thoughts
 
 You should hopefully now have a solid understanding of what SQL Join statements are and why you would want to use them. We’ve explored many types and techniques that will serve as building blocks to help you build advanced SQL queries. Remember that Joins are versatile and robust: if there’s something you want do with them, you probably can. Use this tutorial as a reference and query away.
 
-### References
+## References
+
 [W3Schools](https://www.w3schools.com/sql/sql_join.asp)
 [SQL-Join.com ](http://www.sql-join.com/sql-join-types/)
 [TutorialsPoint](https://www.tutorialspoint.com/sql/sql-using-joins.htm)
