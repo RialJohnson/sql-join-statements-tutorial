@@ -1,4 +1,6 @@
-# SQL Join Statements #
+# SQL Join Statements 
+By Rial Johnson, Jadin Casey, Stuart Dilts
+
 Before beginning this tutorial, you should be familiar with relational database concepts. Basic knowledge of setting up a database and querying with SQL is assumed. If this describes you, get ready to learn about SQL Join Statements!
 
 A Join statement in SQL is used when we want to group together rows
@@ -262,7 +264,7 @@ Then make small changes to refine your query and build up to a powerful query. T
 
 Here’s a few more things you can do with SQL Join statements:
 
-### Renaming Columns###
+### Renaming Columns
 The `AS` keyword is used to change the column name in the output of a query. The format
 is simply: `<column-name> AS <desired-name>`. Changing column names is a useful way to keep output organized and clear without modifying the resulting data. It’s especially valuable when developing complex queries.
 
@@ -363,7 +365,7 @@ ID    | Name   | HasPet
 
 Each additional table to be added to the query needs its own individual Join statement. By following this syntax we can join any number of tables, but keep in mind that this can get complex quickly.
 
-## Underlying Mechanics##
+## Underlying Mechanics
 We’ve seen a lot of examples and use cases for Join statements, but how do they work? Conceptually, join statements are two different operations on the data: a cross
 product of the tables to be joined followed by a `SELECT ... WHERE` operation. The cross product can be seen by running a join without specifying the `ON [conditions]` portion
 of the query:
@@ -408,11 +410,11 @@ captured with simple queries, but the behavior is the same: generate a table
 based of the type of join and then filter the table with the conditions
 specified in the `ON` clause.
 
-###Final Thoughts###
+### Final Thoughts
 
 You should hopefully now have a solid understanding of what SQL Join statements are and why you would want to use them. We’ve explored many types and techniques that will serve as building blocks to help you build advanced SQL queries. Remember that Joins are versatile and robust: if there’s something you want do with them, you probably can. Use this tutorial as a reference and query away.
 
-###References###
+### References
 [W3Schools](https://www.w3schools.com/sql/sql_join.asp)
 [SQL-Join.com ](http://www.sql-join.com/sql-join-types/)
 [TutorialsPoint](https://www.tutorialspoint.com/sql/sql-using-joins.htm)
